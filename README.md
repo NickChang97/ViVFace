@@ -6,16 +6,26 @@ Need face alignment for every frames. (related codes can borrowed from this: htt
 
 Images should be organized as this:
 HDTF
-	-identity1
+
+	--identity1
+ 
 		xxx.png
-	-identity2
+  
+	--identity2
+ 
 		xxx.png
+  
 	...
+ 
 CelebVHQ
-	-identity1
+	--identity1
+ 
 		xxx.png
-	-identity2
+  
+	--identity2
+ 
 		xxx.png
+  
 	...
 
 specify data root in configs/paths_config.py
