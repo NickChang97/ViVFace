@@ -1,5 +1,5 @@
 # ViVFace
-Codes for 
+Codes for Enhancing Identity-Deformation Disentanglement in StyleGAN for One-Shot Face Video Re-Enactment. ViVFace is accepted by AAAI 2025
 
 ## TODO
 - [ ] Initialize
