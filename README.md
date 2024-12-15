@@ -1,8 +1,14 @@
 # ViVFace
-Codes for paper review.
+Codes for 
+
+## TODO
+- [ ] Initialize
+- [√] Data preparation
+- [√] Training codes
+- [ ] Inference codes and models
+- [ ] Examples
 
 ## DATASET
-Need face alignment for every frames. (related codes can borrowed from this: https://github.com/adobe-research/diffusion-rig)
 
 Images should be organized as this:
 HDTF
