@@ -3,8 +3,8 @@ Codes for
 
 ## TODO
 - [ ] Initialize
-- [√] Data preparation
-- [√] Training codes
+- [x] Data preparation
+- [x] Training codes
 - [ ] Inference codes and models
 - [ ] Examples
 
