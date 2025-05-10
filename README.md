@@ -56,3 +56,5 @@ CUDA_VISIBLE_DEVICES=0 python scripts/train_second_stage.py --dataset_type align
 ```.bash
 CUDA_VISIBLE_DEVICES=0 python scripts/inference_ours.py --dataset_type=specify_source_image_driving_dir --source_image xxx.png --driving_image_dir xxx --exp_dir=xxx --workers=0 --batch_size=1 --test_batch_size=1 --test_workers=0 --val_interval=2500 --save_interval=5000 --resume_training_from_ckpt CKPT_PATH
 ```
+
+checkpoint link: https://pan.baidu.com/s/1kGOs9m_2R2pKEdX9_Gl57g Code: xwsg 
