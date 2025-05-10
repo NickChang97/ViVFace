@@ -51,3 +51,8 @@ Stage-II
 ```.bash
 CUDA_VISIBLE_DEVICES=0 python scripts/train_second_stage.py --dataset_type aligned_celevb_image --exp_dir second_stage  --start_from_latent_avg --use_w_pool --val_interval 100000000 --max_steps 100000 --stylegan_size 1024 --checkpoint_path first_stage.pt --workers 16 --batch_size 8 --test_batch_size 4 --test_workers 4 --learning_rate 0.0001 --save_training_data --save_interval 10000 --ss_latent_contrastive_lambda 0.00 --w_discriminator_lr 2e-5 --aug_rate 0.9 --res_lambda 0.1 --hairclip_checkpoint_path pretrained_models/hairclip.pt --hair_aug_rate 0.33 --age_aug_rate 0.67 --image_interval 100
 ```
+
+## Inference
+```.bash
+CUDA_VISIBLE_DEVICES=0 python scripts/inference_ours.py --dataset_type=specify_source_image_driving_dir --source_image xxx.png --driving_image_dir xxx --exp_dir=xxx --workers=0 --batch_size=1 --test_batch_size=1 --test_workers=0 --val_interval=2500 --save_interval=5000 --resume_training_from_ckpt CKPT_PATH
+```
