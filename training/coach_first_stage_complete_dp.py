@@ -110,7 +110,50 @@ class Coach:
                 self.global_step += 1
                 if self.opts.progressive_steps:
                     self.check_for_progressive_training_update()
+    def inference(self):
+        self.net.train()
 
+        save_dir = 'specify_img_inference'
+        save_dir = os.path.join(self.opts.exp_dir, save_dir)
+        os.makedirs(save_dir, exist_ok=True)
+        source_dir = os.path.join(save_dir, 'source')
+        os.makedirs(source_dir, exist_ok=True)
+        driving_dir = os.path.join(save_dir, 'driving')
+        os.makedirs(driving_dir, exist_ok=True)
+        driven_dir = os.path.join(save_dir, 'driven')
+        os.makedirs(driven_dir, exist_ok=True)
+        driving_recon_dir = os.path.join(save_dir, 'driving_recon')
+        os.makedirs(driving_recon_dir, exist_ok=True)
+
+        for batch_idx, batch in enumerate(self.test_dataloader):
+            print(f"\r {batch_idx} / {len(self.test_dataloader)}", end="")
+
+            S = batch['source']
+            D2 = batch['driving']
+            image_name = batch['name'][0]
+        
+            S,  D2 = S.to(self.device).float(), D2.to(self.device).float()
+            with torch.no_grad():
+                D2_hat, D2_latent = self.net.forward(D2, return_latents=True)
+                S_D2 = self.net.forward(S, ss_generic_latent=D2_latent['ss_generic_latent'], return_latents=False)
+            
+            Source_image = common.tensor2im(S[0])
+            Driving_image = common.tensor2im(D2[0])
+            Driven_image = common.tensor2im(S_D2[0])
+            Driving_recon_image = common.tensor2im(D2_hat[0])
+
+            #image_name = f'{save_idx}.png'
+
+            Source_image_name = os.path.join(source_dir, image_name)
+            Driving_image_name = os.path.join(driving_dir, image_name)
+            Driving_recon_image_name = os.path.join(driving_recon_dir, image_name)
+            Driven_image_name = os.path.join(driven_dir, image_name)
+
+            Source_image.save(Source_image_name)
+            Driving_image.save(Driving_image_name)
+            Driven_image.save(Driven_image_name)
+            Driving_recon_image.save(Driving_recon_image_name)
+            
     def image_inverse_1024(self):
         self.net.eval()
         save_dir = 'image_inverse'
