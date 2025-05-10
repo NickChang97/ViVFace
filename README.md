@@ -9,7 +9,7 @@ ViVFace is accepted by AAAI 2025
 ## TODO
 - [x] Data preparation
 - [x] Training codes
-- [ ] Inference codes and models
+- [x] Inference codes and models
 - [ ] Examples
 
 ## DATASET
