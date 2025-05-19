@@ -135,7 +135,7 @@ class Coach:
             S,  D2 = S.to(self.device).float(), D2.to(self.device).float()
             with torch.no_grad():
                 D2_hat, D2_latent = self.net.forward(D2, return_latents=True)
-                S_D2 = self.net.forward(S, ss_generic_latent=D2_latent['ss_generic_latent'], return_latents=False)
+                S_D2 = self.net.forward(S, ss_generic_latent=D2_latent['ss_generic_latent'], return_latents=False, randomize_noise=False)
             
             Source_image = common.tensor2im(S[0])
             Driving_image = common.tensor2im(D2[0])
