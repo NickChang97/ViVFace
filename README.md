@@ -60,3 +60,19 @@ CUDA_VISIBLE_DEVICES=0 python scripts/inference_ours.py --dataset_type=specify_s
 Please note that, images should take face-alignment according to FFHQ dataset due to the characteristics when training StyleGAN.
 
 checkpoint link: https://pan.baidu.com/s/1kGOs9m_2R2pKEdX9_Gl57g Code: xwsg 
+
+## Citation
+
+If you find this project useful in your research, please consider cite:
+
+```latex
+@inproceedings{chang2025enhancing,
+  title={Enhancing Identity-Deformation Disentanglement in StyleGAN for One-Shot Face Video Re-Enactment},
+  author={Chang, Qing and Ding, Yao-Xiang and Zhou, Kun},
+  booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
+  volume={39},
+  number={2},
+  pages={1247--1255},
+  year={2025}
+}
+```
