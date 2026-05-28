@@ -1,7 +1,7 @@
 # ViVFace
 Codes for Enhancing Identity-Deformation Disentanglement in StyleGAN for One-Shot Face Video Re-Enactment. 
 
-Project Page https://nickchang97.github.io/ViVFace.github.io/
+[Project Page](https://nickchang97.github.io/ViVFace.github.io/)
 
 ViVFace is accepted by AAAI 2025
 
@@ -10,7 +10,6 @@ ViVFace is accepted by AAAI 2025
 - [x] Data preparation
 - [x] Training codes
 - [x] Inference codes and models
-- [ ] Examples
 
 ## DATASET
 
